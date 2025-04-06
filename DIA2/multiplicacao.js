@@ -1,36 +1,39 @@
-console.log("------------------------- S O M A ------------------------- \n")
+console.log("------------------------- M U L T I P L I C A Ç Ã O ------------------------- \n")
 
-// adicionando pontuação em jogo ficticio
-let pontuacaoAtual = 2000;
-let pontuacaoAdicionada = 200;
-let soma = pontuacaoAdicionada + pontuacaoAtual;
+// Produtos
 
-console.log("A pontuação total foi: " + soma);
+let produto1 = 500;
+let produto2 = 200;
+let total1 = produto1 * 2; 
+let total2 = produto2 * 2;
+let totalCompra = total1 + total2; 
 
-console.log("----------------------------------------------------- \n");
-
-// Horas trabalhadas
-
-let segunda = 6;
-let terça = 6;
-let quarta = 6;
-let quinta = 6; 
-let sexta = 6;
-
-let horasTrabalhadas = segunda + terça + quarta + quinta + sexta;
-
-console.log("As horas trabalhadas da semana foi:" + horasTrabalhadas)
+console.log("o total dos dois produtos foi: " + totalCompra);
+console.log("o total do produto 1 foi: " + total1);
+console.log("o total do produto 2 foi: " + total2);
 
 console.log("----------------------------------------------------- \n");
 
-//salario total da casa
+// Area retangulo
 
-let salarioEnrico = 1500;
-let salarioPhaedra  = 9000;
-let salarioJho = 1500;
-let somaSalarios = salarioEnrico + salarioJho + salarioPhaedra;
+let area = 3;
+let altura = 4;
+let areaR = (area*altura);
 
-console.log("O salario total da casa é de: " +somaSalarios);
+console.log("A area do retangulo foi: " + areaR + "cm");
+
+console.log("----------------------------------------------------- \n");
+
+//Horas trabalhadas 
+
+let horasTrabalhadas = 40;
+let valorHora = 20;
+let total = valorHora * horasTrabalhadas;
+
+let totalApos160H = valorHora * 160;
+
+console.log("O funcionario recebeu: " +total +" trabalhando 40 horas");
+console.log("O funcionario recebeu: " +totalApos160H +" trabalhando 160 horas");
 
 console.log("----------------------------------------------------- \n");
 

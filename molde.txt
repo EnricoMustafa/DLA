@@ -1,0 +1,14 @@
+console.log("------------------------- M U L T I P L I C A Ç Ã O ------------------------- \n")
+
+// adicionando pontuação em jogo ficticio
+
+console.log("----------------------------------------------------- \n");
+
+// Horas trabalhadas
+
+console.log("----------------------------------------------------- \n");
+
+//salario total da casa
+
+console.log("----------------------------------------------------- \n");
+
