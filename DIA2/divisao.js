@@ -12,7 +12,10 @@ console.log("A media das notas é: " +media);
 console.log("----------------------------------------------------- \n");
 
 // converter distancia pra metro
-let metros = 500; 
+let metros = 3500;
+let quilometros = metros / 1000
+
+console.log(metros+" metros é igual a " +quilometros +" quilometros")
 console.log("----------------------------------------------------- \n");
 
 //salario total da casa
