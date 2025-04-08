@@ -1,6 +1,5 @@
 //IMC com função
-
-function cacularImc(peso,altura) {
+const cacularImc = (peso,altura) => {
     const imc = peso/(altura**2);
     imc <= 18.5 ? console.log("Abaixo do normal") :
     imc <= 24.9 ? console.log("normal") :
