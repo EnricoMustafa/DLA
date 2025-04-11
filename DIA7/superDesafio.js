@@ -5,6 +5,7 @@ let limite = 0.10;
 let totalContas = conta1 + conta2; //quando o saldo das duas contas chegar a 1000 o limite vira 1.1
 let limiteContas = 0;
 
+// CORRETO
 const calcularSaldoDasContas = (conta) => {
     let saldoTotal = conta1+conta2;
 
@@ -20,15 +21,35 @@ const calcularSaldoDasContas = (conta) => {
     
 }
 
+// //ERRO
+// const verificarSaldo = (contaOrigem) => {
+//     if(contaOrigem == 1){
+//         if(conta1 != 0){
+//             calcularSaldoDasContas(1);
+//         } else {
+//             console.log("Saldo insuficiente, saldo atual da conta1: R$" +conta1);
+//         }
+//     }
+
+//     if(contaOrigem == 2){
+//         if(conta2 <= 0){
+//             console.log("Saldo insuficiente, saldo atual da conta1: R$" +conta2);
+//         } else if(conta2 > 1000){
+//             conta2 = conta2 / limite;
+//             console.log("A conta está usando o limite a cima de R$1000,00");
+//         }
+//     }
+ 
+// }
+
+//CORRETO
 const fazerDeposito = (contaOrigem, valor) => {
     if(contaOrigem == 1){
-        valor = valor + conta1;
-        console.log("Valor depositado na conta1: R$" + valor);
+        conta1 = conta1 + valor;
+        calcularSaldoDasContas(1);
     } else if(contaOrigem == 2){
-        valor = valor + conta2;
-        console.log("Valor depositado na conta2: R$" + valor);
-    } else if(contaOrigem != 1 || contaOrigem != 2){
-        console.log("ERRO: Conta digitada: conta" +contaOrigem +" || Conta não existente");
+        conta2 = conta2 + valor;
+        calcularSaldoDasContas(2);
     }
 };
 
@@ -43,8 +64,7 @@ const fazerDebito = (opcao, valorDebito) => {
             console.log("Foi debitado R$" + valorDebito + ",00 na conta2 | O saldo atual é de: R$" + conta2);
             break;
 
-        default:
-            console.log("Erro no debito")
+        default:            console.log("Erro no debito")
             break;
     }
 }
@@ -78,4 +98,3 @@ const tranferirSaldo = (opcao, valorTranferencia) => {
     }
 }
 
-fazerDeposito(3,100)
