@@ -1,10 +1,11 @@
 //fila de supermercado em codigo;
+//MELHORAR O CODIGO
 
 let filaMercado =[]
 
 function tamanhoDaFila(){
     for(let i = 0; i < filaMercado.length; i++){
-        console.log(filaMercado[i])
+        console.log(filaMercado[i].join(", "))
     } 
 }
 
@@ -19,7 +20,7 @@ function entrouNaFila(entrou, pessoa){
 
 function saiuDaFila(saiu){
     if(saiu == true){
-        filaMercado.pop()
+        filaMercado.shift()
     } else{
         console.log("Ninguem foi atendido")
     }
@@ -30,6 +31,4 @@ entrouNaFila(true,"josé");
 entrouNaFila(true,"joao");
 entrouNaFila(true,"Carlos");
 entrouNaFila(true,"Enrico");
-saiuDaFila(true);
-saiuDaFila(true);
 saiuDaFila(true);
