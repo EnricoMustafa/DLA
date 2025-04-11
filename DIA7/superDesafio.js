@@ -1,6 +1,6 @@
 //Super desafio Aplicação de FInanças
-let conta1 = 500;
-let conta2 = 100;
+let conta1 = 0;
+let conta2 = 0;
 let limite = 0.10;
 let totalContas = conta1 + conta2; //quando o saldo das duas contas chegar a 1000 o limite vira 1.1
 let limiteContas = 0;
@@ -20,20 +20,15 @@ const calcularSaldoDasContas = (conta) => {
     
 }
 
-const fazerDeposito = (opcao, valor) => {
-    switch (opcao) {
-        case 1:
-            conta1 = conta1 + valor
-            console.log("Foi adicionado R$" + valor + ",00 na conta1 | O saldo atual é de: R$" + conta1);
-            break;
-        case 2:
-            conta2 = conta2 + valor
-            console.log("Foi adicionado R$" + valor + ",00 na conta2 | O saldo atual é de: R$" + conta2);
-            break;
-
-        default:
-            console.log("Erro no deposito")
-            break;
+const fazerDeposito = (contaOrigem, valor) => {
+    if(contaOrigem == 1){
+        valor = valor + conta1;
+        console.log("Valor depositado na conta1: R$" + valor);
+    } else if(contaOrigem == 2){
+        valor = valor + conta2;
+        console.log("Valor depositado na conta2: R$" + valor);
+    } else if(contaOrigem != 1 || contaOrigem != 2){
+        console.log("ERRO: Conta digitada: conta" +contaOrigem +" || Conta não existente");
     }
 };
 
@@ -83,4 +78,4 @@ const tranferirSaldo = (opcao, valorTranferencia) => {
     }
 }
 
-calcularSaldoDasContas(1);
+fazerDeposito(3,100)
