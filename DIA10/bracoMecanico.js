@@ -1,43 +1,31 @@
 //Braço mecanico para empilhar produtos
 
-let caixa1 = [];
-let caixa2 = [];
-let caixa3 = [];
+let caixa =[];
+const capacidadeMaxima = 10;
 
-function adicionarProduto(caixa, produto){
-    let nomeCaixa;
-    if(caixa == 1){
-        nomeCaixa = "caixa1";
-        caixa1.push(produto);
-        console.log("Foi adicionado " +produto+ " na caixa " +nomeCaixa)
-    }else if(caixa == 2){
-        nomeCaixa = "caixa2";
-        caixa2.push(produto);
-        console.log("Foi adicionado " +produto+ " na caixa " +nomeCaixa)
-    }else if(caixa == 3){
-        nomeCaixa = "caixa3";
-        caixa3.push(produto);
-        console.log("Foi adicionado " +produto+ " na caixa " +nomeCaixa)
+function adicionarProduto(produto){
+    if(caixa.length < capacidadeMaxima){
+        caixa.push(produto);
+        console.log("Produto " +produto+ " adicionado "+caixa.join(", ") +";");
     }else{
-        console.log("caixa não identificada")
+        console.log("Caixa cheia despachada para proxima parte");
+        caixa = [];
+        caixa.push(produto);
+        console.log("Produto "+produto+" adicionado a uma nova caixa")
     }
 }
 
-function verificarCaixa(){
-    if(caixa1 == 0){
-        console.log("caixa1 está vazia")
-    }else if(caixa2 == 0){
-        console.log("caixa2 está vazia")
-    }else if(caixa3 == 0){
-        console.log("caixa2 está vazia")
-    } else{
-        console.log("A caixa1: "+caixa1);
-        console.log("A caixa2: "+caixa2);
-        console.log("A caixa3: "+caixa3);
-    }
-    
-}
 
-adicionarProduto(1, "arroz")
-adicionarProduto(2, "arroz")
-verificarCaixa();
+adicionarProduto("Feijão");
+adicionarProduto("Arroz");
+adicionarProduto("Carne");
+adicionarProduto("Café");
+adicionarProduto("Agua");
+adicionarProduto("Chocolate");
+adicionarProduto("Pão");
+adicionarProduto("Filtro de café");
+adicionarProduto("Queijo");
+adicionarProduto("Frango");
+adicionarProduto("Suco");
+adicionarProduto("Frutas");
+
