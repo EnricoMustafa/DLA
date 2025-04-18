@@ -1,18 +1,24 @@
 //SUPER DESAFIO  controlar filas de varios caixas de supermercado
-let caixa1 = [];
-let caixa2 = [];
-let caixa3 = [];
-let caixa4 = [];
-let caixa5 = [];
+let filasCaixas = {
+    caixa1: [],
+    caixa2: [],
+    caixa3: [],
+    caixa4: [],
+    caixa5: [],
+    caixa6: [],
+    caixa7: [],
+    caixa8: [],
+    caixa9: [],
+    caixa10: []
+}
 
 function entrarNaFila(caixa,nomeCliente){
-    caixa == 1 ? caixa1.push(nomeCliente) :
-    caixa == 2 ? caixa2.push(nomeCliente) :
-    caixa == 3 ? caixa3.push(nomeCliente) :
-    caixa == 4 ? caixa2.push(nomeCliente) :
-    caixa == 5 ? caixa2.push(nomeCliente) :
-    console.log("Não foi possivel entrar na fila")
-
+    if(filasCaixas[caixa]){
+        filasCaixas[caixa][filasCaixas[caixa].lenght] = nomeCliente;
+        console.log(`O ${nomeCliente} entrou na fila do ${caixa}`);
+    } else{
+        console.log(`O ${caixa} não existe`);
+    }
 }
 
 function foiAtendido(caixa){
@@ -43,20 +49,13 @@ function foiAtendido(caixa){
 
 }
 
-function mostrarCaixa(caixa){
-    caixa == 1 ? console.log("caixa 1 "+caixa1) :
-    caixa == 2 ? console.log("caixa 2 "+caixa2) :
-    caixa == 3 ? console.log("caixa 3 "+caixa3) :
-    caixa == 4 ? console.log("caixa 4 "+caixa4) :
-    caixa == 5 ? console.log("caixa 5 "+caixa5) :
-    console.log("Caixa não reconhecido")
+// o in no for serve para percorrer um objeto
+function mostrarCaixa(){
+    for(let caixas in filasCaixas){
+        console.log(caixas);
+        console.log(filasCaixas[caixas])
+    }
 }
 
-entrarNaFila(2,"Enrico");
-entrarNaFila(2,"Bia");
-entrarNaFila(2,"José");
-mostrarCaixa(2);
-mostrarCaixa(1);
-mostrarCaixa(4);
-mostrarCaixa(3);
-foiAtendido(9);
+entrarNaFila("caixa2","Enrico");
+mostrarCaixa()
