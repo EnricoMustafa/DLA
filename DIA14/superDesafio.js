@@ -1,62 +1,68 @@
 //SUPER DESAFIO  controlar filas de varios caixas de supermercado
-let caixa1 = [];
-let caixa2 = [];
-let caixa3 = [];
-let caixa4 = [];
-let caixa5 = [];
-
-function entrarNaFila(caixa,nomeCliente){
-    caixa == 1 ? caixa1.push(nomeCliente) :
-    caixa == 2 ? caixa2.push(nomeCliente) :
-    caixa == 3 ? caixa3.push(nomeCliente) :
-    caixa == 4 ? caixa2.push(nomeCliente) :
-    caixa == 5 ? caixa2.push(nomeCliente) :
-    console.log("Não foi possivel entrar na fila")
-
+let filasCaixas = {
+    caixa1: [],
+    caixa2: [],
+    caixa3: [],
+    caixa4: [],
+    caixa5: [],
+    caixa6: [],
+    caixa7: [],
+    caixa8: [],
+    caixa9: [],
+    caixa10: []
 }
 
-function foiAtendido(caixa){
-    
-    if(caixa == 1){
-        caixa1.shift()
-        console.log(`O cliente foi atendido no caixa: caixa ${caixa}`);
-        console.log(caixa1);
-    }else if(caixa == 2){
-        caixa2.shift()
-        console.log(`O cliente foi atendido no caixa: caixa ${caixa}`);
-        console.log(caixa2);
-    }else if(caixa == 3){
-        caixa3.shift()
-        console.log(`O cliente foi atendido no caixa: caixa ${caixa}`);
-        console.log(caixa3);
-    }else if(caixa == 4){
-        caixa4.shift() 
-        console.log(`O cliente foi atendido no caixa: caixa ${caixa}`);
-        console.log(caixa4);
-    }else if(caixa == 5 ){
-        caixa5.shift()
-        console.log(`O cliente foi atendido no caixa: caixa ${caixa}`);
-        console.log(caixa5);
-    }else{
-        console.log("Esse caixa não existe");
+function entrarNaFila(caixa, nome) {
+    if (filasCaixas[caixa]) {
+        filasCaixas[caixa][filasCaixas[caixa].length] = nome; 
+        console.log(`${nome} entrou na fila do ${caixa}.`);
+    } else {
+        console.log(`O ${caixa} não existe.`);
     }
-
 }
 
-function mostrarCaixa(caixa){
-    caixa == 1 ? console.log("caixa 1 "+caixa1) :
-    caixa == 2 ? console.log("caixa 2 "+caixa2) :
-    caixa == 3 ? console.log("caixa 3 "+caixa3) :
-    caixa == 4 ? console.log("caixa 4 "+caixa4) :
-    caixa == 5 ? console.log("caixa 5 "+caixa5) :
-    console.log("Caixa não reconhecido")
+function foiAtendido(caixa) {
+    if (filasCaixas[caixa] && filasCaixas[caixa].length > 0){
+        let clienteAtendido = filasCaixas[caixa][0];
+        for (let i = 1; i < filasCaixas[caixa].length; i++){
+            filasCaixas[caixa][i-1] = filasCaixas[caixa][i]
+        }
+        filasCaixas[caixa].length -= 1;
+        console.log(`${clienteAtendido} foi atendido no ${caixa}`)
+    } else if (filasCaixas[caixa]){
+        console.log(`A fila do ${caixa} está vazia`);
+    } else {
+        console.log(`O ${caixa} não existe`);
+    }
 }
 
-entrarNaFila(2,"Enrico");
-entrarNaFila(2,"Bia");
-entrarNaFila(2,"José");
-mostrarCaixa(2);
-mostrarCaixa(1);
-mostrarCaixa(4);
-mostrarCaixa(3);
-foiAtendido(9);
+// o in no for serve para percorrer um objeto
+function mostrarFilas(){
+    console.log("\nEstado das filas: ");
+    for (let i in filasCaixas) {
+        if (filasCaixas[i].length > 0) {
+            console.log(`${i}: ${filasCaixas[i].join(', ')}`)
+        }
+    }
+}
+
+entrarNaFila("caixa2","Enrico");
+entrarNaFila("caixa2","Mariana");
+entrarNaFila("caixa9","luisa");
+entrarNaFila("caixa10","bianca");
+entrarNaFila("caixa3","ikon");
+entrarNaFila("caixa2","cheila");
+entrarNaFila("caixa1","Pedro");
+entrarNaFila("caixa1","João");
+entrarNaFila("caixa4","Paulo");
+entrarNaFila("caixa2","Antopnio");
+entrarNaFila("caixa7","Guilherme");
+
+mostrarFilas();
+
+foiAtendido("caixa7");
+foiAtendido("caixa2");
+foiAtendido("caixa4");
+foiAtendido("caixa2");
+
+mostrarFilas();
