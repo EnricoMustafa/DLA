@@ -10,6 +10,7 @@ function criarNo(elemento){
 let listaEncadeada = {
     head: null,
 
+    // O insertFirst insere o primeiro elemento
     insertFirst: function (elemento) {
         const novoNo = criarNo(elemento);
 
@@ -23,7 +24,9 @@ let listaEncadeada = {
         return elemento;
     },
 
+    // O insertLast insere o ultimo elemento
     insertLast: function (elemento) {
+        const novoNo = criarNo(elemento);
         if (!this.head) {
             this.head = novoNo;
         } else {
@@ -36,6 +39,7 @@ let listaEncadeada = {
         return elemento;
     },
 
+    // O insertAt insere em um posição especifica
     insertAt: function(elemento, posicao) {
         const novoNo = criarNo(elemento);
 
@@ -65,6 +69,7 @@ let listaEncadeada = {
         }
     },
 
+    // O deleteAt deleta um elemento especifico
     deleteAt: function(posicao) {
         if (!this.head) {
             console.log("A lista está vazia.");
@@ -96,6 +101,7 @@ let listaEncadeada = {
         }
     },
 
+    // O searchAt busca um elemento especifico
     searchAt: function (posicao) {
         let atual = this.head;
         let contador = 0;
@@ -113,6 +119,7 @@ let listaEncadeada = {
         }
     },
 
+    // O travesal percorre todos os elementos
     traversal: function () {
        let atual = this.head;
        let resultado = [];
@@ -125,6 +132,7 @@ let listaEncadeada = {
        return resultado;
     },
 
+    // O indeOf mostra a posição especifica de um elemento
     indexOf: function (elemento) {
         let atual = this.head;
         let contador = 0;
@@ -144,4 +152,8 @@ let listaEncadeada = {
 };
 
 console.log(listaEncadeada.insertFirst('Locomotiva'));
-console.log(listaEncadeada.insertLast(''));
+console.log(listaEncadeada.insertLast('Vagão1'));
+console.log(listaEncadeada.insertLast('Vagão2'));
+console.log(listaEncadeada.searchAt(1));
+console.log(listaEncadeada.traversal());
+console.log(listaEncadeada.indexOf());
