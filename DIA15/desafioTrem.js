@@ -65,6 +65,37 @@ let listaEncadeada = {
         }
     },
 
+    deleteAt: function(posicao) {
+        if (!this.head) {
+            console.log("A lista está vazia.");
+            return null;
+        }
+
+        if (posicao === 0) {
+            const elementoRemovido = this.head.data;
+            this.head = this.head.next;
+            return elementoRemovido;
+        }
+
+        let atual = this.head;
+        let anterior = null;
+        let contador = 0;
+
+        while (contador < posicao && atual) {
+            anterior = atual;
+            atual = atual.next;
+            contador++;
+        }
+
+        if (atual) {
+            anterior.next = atual.next;
+            return atual.data;
+        } else {
+            console.log("Posição inválida");
+            return null;
+        }
+    },
+
 
 };
 
