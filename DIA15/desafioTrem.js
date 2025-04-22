@@ -113,6 +113,17 @@ let listaEncadeada = {
         }
     },
 
+    traversal: function () {
+       let atual = this.head;
+       let resultado = [];
+       
+       while (atual) {
+        resultado.push(atual.data);
+        atual = atual.next;
+       }
+
+       return resultado;
+    }
 
 
 };
