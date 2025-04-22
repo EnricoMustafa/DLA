@@ -96,6 +96,24 @@ let listaEncadeada = {
         }
     },
 
+    searchAt: function (posicao) {
+        let atual = this.head;
+        let contador = 0;
+
+        while (contador < posicao && atual) {
+            atual = atual.next;
+            contador++;
+        }
+
+        if (atual) {
+            return atual.data;
+        } else {
+            console.log("Posição inválida")
+            return null;
+        }
+    },
+
+
 
 };
 
