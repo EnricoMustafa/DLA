@@ -123,6 +123,21 @@ let listaEncadeada = {
        }
 
        return resultado;
+    },
+
+    indexOf: function (elemento) {
+        let atual = this.head;
+        let contador = 0;
+
+        while (atual) {
+            if (atual.data === elemento) {
+                return contador;
+            }
+            atual = atual.next;
+            contador++;
+        }
+        console.log("Elemento não encontrado");
+        return -1;
     }
 
 
