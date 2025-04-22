@@ -56,9 +56,14 @@ let listaEncadeada = {
         }
 
         if (contador === posicao) {
-            
+            anterior.next = novoNo;
+            novoNo.next = atual;
+            return elemento
+        } else {
+            console.log("Posicao invalida")
+            return null;
         }
-    }
+    },
 
 
 };
