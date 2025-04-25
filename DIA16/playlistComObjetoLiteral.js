@@ -65,15 +65,39 @@ const playlist = {
             console.log(`Nome da música: ${musica.artista}`);
             console.log(`Duração: ${musica.tempo}`);
         }
+    },
+
+    ordenarPlaylist: function (arr) {
+        let n = arr.length;
+        for (let i = 0; i < n - 1; i++) {
+            let minIndex = i;
+    
+            for (let j = i + 1; j < n; j++) {
+                if (arr[j][1] < arr[minIndex][1]) {
+                    minIndex = j;
+                }
+            }
+    
+            let temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+    
+        return arr;
     }
 
 };
 
 console.log(playlist.adicionarMusica("Judia de mim", "Roberto Carlos", "3 min"));
 console.log(playlist.adicionarMusica("Bota fofo", "Xheila carvalho", "2 min"));
-console.log(playlist.adicionarMusica("Adulterio", "Mr catra", "5 min"));
+console.log(playlist.adicionarMusica("sdulterio", "Mr catra", "5 min"));
+console.log(playlist.adicionarMusica("zdulterio", "Mr catra", "5 min"));
+console.log(playlist.adicionarMusica("ldulterio", "Mr catra", "5 min"));
+console.log(playlist.adicionarMusica("wdulterio", "Mr catra", "5 min"));
 
 console.log(playlist.mostrarPlaylist());
 console.log(playlist.removerMusica(1,1));
 console.log(playlist.tocarUmaMusica(1));
 playlist.tocarPLaylistToda();
+
+console.log(playlist.ordenarPlaylist(playlist.musicas))
